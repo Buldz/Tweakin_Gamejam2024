@@ -11,6 +11,8 @@ public abstract class Item : MonoBehaviour
     public Rigidbody rb;
     [SerializeField] private Camera _playerCam;
     bool pickUp = false;
+    public bool hasBeenUsed = false;
+    public static bool isUsed;
 
 
     public void Pickup()
@@ -35,6 +37,14 @@ public abstract class Item : MonoBehaviour
     }
 
     public abstract void Use();
+
+    public void Used(){
+        if(!hasBeenUsed){
+            isUsed = true;
+        }
+        hasBeenUsed = true;
+
+    }
 
     void Update()
     {
