@@ -9,6 +9,5 @@ public class ClownNose : Item
     public override void Use()
     {
         clownNoseSound.Play();
-        UnityEngine.Debug.Log("Honk!");
     }
 }
