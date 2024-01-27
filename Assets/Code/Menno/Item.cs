@@ -10,6 +10,7 @@ public abstract class Item : MonoBehaviour
     public Transform itemLocation;
     public Rigidbody rb;
     [SerializeField] private Camera _playerCam;
+    bool pickUp = false;
 
 
     public void Pickup()
@@ -19,6 +20,8 @@ public abstract class Item : MonoBehaviour
         this.transform.localScale = this.transform.localScale / 10;
         this.gameObject.transform.parent = itemLocation.transform;
         rb.isKinematic = true;
+
+        pickUp = true;
     }
 
     public void Release()
@@ -27,14 +30,18 @@ public abstract class Item : MonoBehaviour
         this.transform.rotation = Quaternion.identity;
         this.transform.localScale = this.transform.localScale * 10;
         rb.isKinematic = false;
+
+        pickUp = false;
     }
 
     public abstract void Use();
 
     void Update()
     {
-        if (this.transform.localScale.x > 0.1)
+        if (pickUp == false)
+        {
             transform.LookAt(_playerCam.transform);
+        }
         else
         {
             this.transform.localEulerAngles = new Vector3(0,90,0);
