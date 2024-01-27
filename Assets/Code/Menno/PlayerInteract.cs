@@ -21,9 +21,6 @@ public class PlayerInteract : MonoBehaviour
     public Item lastLookedAtItem;
     public bool itemPickedUp = false;
 
-    //UI
-    public GameObject PickupInstructionUI;
-    public GameObject DropInstructionUI;
 
     void Start()
     {
@@ -53,23 +50,11 @@ public class PlayerInteract : MonoBehaviour
             //Item
             if (hit.collider.tag == "item" && itemPickedUp == false)
             {
-                PickupInstructionUI.SetActive(true);
-
                 //Press E to pickup item
                 if (Input.GetKeyDown("e"))
                 {
                     ItemPickup();
                 }
-            }
-            else
-            {
-                PickupInstructionUI.SetActive(false);
-            }
-
-            if (itemPickedUp == true)
-            {
-                PickupInstructionUI.SetActive(false);
-                DropInstructionUI.SetActive(true);
             }
         }
 
@@ -104,7 +89,6 @@ public class PlayerInteract : MonoBehaviour
         {
             lastLookedAtItem.Release();
             itemPickedUp = false;
-            DropInstructionUI.SetActive(false);
         }
     }
 
