@@ -61,7 +61,12 @@ public class PlayerInteract : MonoBehaviour
                     ItemPickup();
                 }
             }
-            else if (itemPickedUp == true)
+            else
+            {
+                PickupInstructionUI.SetActive(false);
+            }
+
+            if (itemPickedUp == true)
             {
                 PickupInstructionUI.SetActive(false);
                 DropInstructionUI.SetActive(true);
