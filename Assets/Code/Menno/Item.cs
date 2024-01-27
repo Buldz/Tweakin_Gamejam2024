@@ -4,23 +4,12 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Item : MonoBehaviour
+public abstract class Item : MonoBehaviour
 {
-    //Object
+    //Item
     public Transform itemLocation;
     public Rigidbody rb;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void Pickup()
     {
@@ -36,8 +25,5 @@ public class Item : MonoBehaviour
         rb.isKinematic = false;
     }
 
-    public void Use()
-    {
-        Debug.Log("used");
-    }
+    public abstract void Use();
 }
