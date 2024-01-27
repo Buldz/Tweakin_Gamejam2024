@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     private float speed = 3f;
     private float gravity = -9.81f;
-    private float jumpHeight = 3f;
 
     private Vector3 velocity;
     private bool isGrounded;
