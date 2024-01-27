@@ -18,11 +18,12 @@ public class PlayerInteract : MonoBehaviour
 
 
     //Object
-    public Item currentItem;
-    bool itemPickedUp = false;
+    public Item lastLookedAtItem;
+    public bool itemPickedUp = false;
 
     //UI
-    public GameObject InstructionUI;
+    public GameObject PickupInstructionUI;
+    public GameObject DropInstructionUI;
 
     void Start()
     {
@@ -41,24 +42,30 @@ public class PlayerInteract : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, range))
         {
+           
             Item item = hit.collider.GetComponent<Item>();
-            currentItem = item;
+
+            if (item != null && itemPickedUp == false)
+            {
+                lastLookedAtItem = item;
+            }
 
             //Item
-            if (hit.collider.tag == "item")
+            if (hit.collider.tag == "item" && itemPickedUp == false)
             {
-                InstructionUI.SetActive(true);
+                PickupInstructionUI.SetActive(true);
 
                 //Press E to pickup item
                 if (Input.GetKeyDown("e"))
                 {
                     ItemPickup();
                 }
-            }  
-        }
-        else
-        {
-            InstructionUI.SetActive(false);
+            }
+            else if (itemPickedUp == true)
+            {
+                PickupInstructionUI.SetActive(false);
+                DropInstructionUI.SetActive(true);
+            }
         }
 
         //Press Q to release item
@@ -78,21 +85,29 @@ public class PlayerInteract : MonoBehaviour
 
     void ItemPickup()
     {
-        currentItem.Pickup();
-        itemPickedUp = true;
+        if (itemPickedUp == false) 
+        {
+            lastLookedAtItem.Pickup();
+            itemPickedUp = true;
+            //PickupInstructionUI.SetActive(false);
+        }
     }
 
     void ItemRelease()
     {
-        currentItem.Release();
-        itemPickedUp = false;
+        if (itemPickedUp == true)
+        {
+            lastLookedAtItem.Release();
+            itemPickedUp = false;
+            DropInstructionUI.SetActive(false);
+        }
     }
 
     void ItemUse()
     {
         if (itemPickedUp == true)
         {
-            currentItem.Use();
+            lastLookedAtItem.Use();
         }
     }
 }
