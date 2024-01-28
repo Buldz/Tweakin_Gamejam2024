@@ -9,14 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 189475726846732528}
-  - component: {fileID: 2077446582821826373}
   - component: {fileID: 243837660249383995}
   - component: {fileID: 6521057267401454725}
   - component: {fileID: 5641449394260178587}
   - component: {fileID: 4215001771384192849}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,14 +37,6 @@ Transform:
   - {fileID: 5572391827978557429}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &2077446582821826373
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2147714132622628841}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &243837660249383995
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -161,7 +152,7 @@ GameObject:
   - component: {fileID: 4528997535222470295}
   m_Layer: 0
   m_Name: ItemLocation
-  m_TagString: Untagged
+  m_TagString: ItemLocation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -194,7 +185,7 @@ GameObject:
   - component: {fileID: 7520085176793418593}
   m_Layer: 0
   m_Name: Audio Source
-  m_TagString: Untagged
+  m_TagString: PlayerSounds
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -394,7 +385,7 @@ GameObject:
   - component: {fileID: 7241897533639709796}
   - component: {fileID: 802774394169845043}
   - component: {fileID: 52215018853701967}
-  - component: {fileID: 6449291420588336670}
+  - component: {fileID: 975270701507212802}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -452,7 +443,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 51.6945
+  field of view: 58.715515
   orthographic: 0
   orthographic size: 5.02
   m_Depth: -1
@@ -514,7 +505,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6449291420588336670
+--- !u!114 &975270701507212802
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
