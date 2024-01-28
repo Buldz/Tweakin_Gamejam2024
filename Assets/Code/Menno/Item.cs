@@ -12,7 +12,7 @@ public abstract class Item : MonoBehaviour
     private Rigidbody rb;
     private GameObject _playerObj;
     public GameObject AudioSourceMusic;
-     public GameObject AudioSourcePlayer;
+    public GameObject AudioSourcePlayer;
     private bool pickUp = false;
     public bool hasBeenUsed = false;
     public static bool isUsed;
@@ -29,22 +29,34 @@ public abstract class Item : MonoBehaviour
 
     public void Pickup()
     {
+        if (!(this.gameObject.layer == 6))
+        {
+            this.transform.localScale = this.transform.localScale / 10;
+        }
+        else
+        {
+            this.transform.localScale = this.transform.localScale / 3;
+        }
         this.transform.position = itemLocation.transform.position;
         this.transform.rotation = itemLocation.transform.rotation;
-        this.transform.localScale = this.transform.localScale / 10;
         this.gameObject.transform.parent = itemLocation.transform;
         rb.isKinematic = true;
-
         pickUp = true;
     }
 
     public void Release()
     {
+        if (!(this.gameObject.layer == 6))
+        {
+            this.transform.localScale = this.transform.localScale * 10;
+        }
+        else
+        {
+            this.transform.localScale = this.transform.localScale * 3;
+        }
         this.gameObject.transform.parent = null;
         this.transform.rotation = Quaternion.identity;
-        this.transform.localScale = this.transform.localScale * 10;
         rb.isKinematic = false;
-
         pickUp = false;
     }
 
@@ -68,7 +80,14 @@ public abstract class Item : MonoBehaviour
         }
         else
         {
-            this.transform.localEulerAngles = new Vector3(0, 90, 0);
+            if (!(this.gameObject.layer == 6))
+            {
+                this.transform.localEulerAngles = new Vector3(0, 90, 0);
+            }
+            else
+            {
+                this.transform.localEulerAngles = new Vector3(0, 0, 0);
+            }
         }
     }
 }
