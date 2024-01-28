@@ -1,25 +1,25 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HuntingKnife : Item
+public class BoxingGlove : Item
 {
-    public Balloon balloon;
+    public Pinata pinata;
     public Guy guy;
 
-    public AudioSource slashAudio;
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip[] _audioClips;
 
     //Raycast
     public float range = 2;
     Ray ray;
 
-    public bool balloonIsHit = false;
+    public bool pinataIsHit = false;
     public bool guyIsHit = false;
 
     public void Update()
     {
-        balloonIsHit = false;
+        pinataIsHit = false;
         guyIsHit = false;
 
         ray = new Ray(transform.position, transform.TransformDirection(-Vector3.forward * range));
@@ -30,8 +30,8 @@ public class HuntingKnife : Item
         {
             if (hit.collider.tag == "interactable")
             {
-                balloonIsHit = true;
-                balloon = hit.collider.GetComponent<Balloon>();
+                pinataIsHit = true;
+                pinata = hit.collider.GetComponent<Pinata>();
             }
 
             if (hit.collider.tag == "guy")
@@ -54,12 +54,15 @@ public class HuntingKnife : Item
     public override void Use()
     {
         Used();
-        slashAudio.Play();
-        if (balloonIsHit ==true)
+
+        AudioClip randomClip = _audioClips[Random.Range(0, _audioClips.Length)];
+        _audioSource.PlayOneShot(randomClip);
+
+        if (pinataIsHit == true)
         {
-            balloon.Pop();
+            pinata.Pop();
         }
-        
+
         if (guyIsHit == true)
         {
             guy.Hurt();

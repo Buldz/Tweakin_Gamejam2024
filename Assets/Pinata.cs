@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Balloon : MonoBehaviour
+public class Pinata : MonoBehaviour
 {
-    public AudioSource balloonPopAudio;
+    public AudioSource pinataPopAudio;
 
     // Update is called once per frame
     void Update()
@@ -14,7 +14,7 @@ public class Balloon : MonoBehaviour
 
     public void Pop()
     {
-        balloonPopAudio.Play();
+        pinataPopAudio.Play();
         Destroy(this.gameObject);
     }
 }
