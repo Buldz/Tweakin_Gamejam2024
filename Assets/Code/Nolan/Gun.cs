@@ -16,18 +16,19 @@ public class Gun : Item
     private AudioSource _audioSource;
     public override void Use()
     {
-        Used();
-        if(!hasBeenUsed){
-        Cursor.lockState = CursorLockMode.None;
-        _audioSource = this.GetComponent<AudioSource>();
-        Camera.main.cullingMask = 0;
-        AudioSourcePlayer.GetComponent<AudioSource>().mute = true;
-        _audioSource.PlayOneShot(_audioClips[0]);
-        _audioSource.PlayOneShot(_audioClips[1]);
-        _canvas = GetComponentInChildren<Canvas>();
-        _rawImage = GetComponentInChildren<RawImage>();
-        StartCoroutine(timer());
-        hasBeenUsed = true;
+        if (!hasBeenUsed)
+        {
+            Used();
+            Cursor.lockState = CursorLockMode.None;
+            _audioSource = this.GetComponent<AudioSource>();
+            Camera.main.cullingMask = 0;
+            AudioSourcePlayer.GetComponent<AudioSource>().mute = true;
+            _audioSource.PlayOneShot(_audioClips[0]);
+            _audioSource.PlayOneShot(_audioClips[1]);
+            _canvas = GetComponentInChildren<Canvas>();
+            _rawImage = GetComponentInChildren<RawImage>();
+            StartCoroutine(timer());
+            hasBeenUsed = true;
         }
     }
 

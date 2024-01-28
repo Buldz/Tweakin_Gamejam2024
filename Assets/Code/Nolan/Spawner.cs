@@ -9,6 +9,8 @@ public class Spawner : MonoBehaviour
     private GameObject _currentGameObject;
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip[] _audioClips;
+    [SerializeField] private GameObject _fella;
+    private bool _spawnedFella = false;
     private GameObject _currentItem;
     private int I = 0;
 
@@ -29,6 +31,10 @@ public class Spawner : MonoBehaviour
         {
             SpawnItem();
             Item.isUsed = false;
+        }
+        if (I == _gameObjectList.Length && !_spawnedFella){
+            _spawnedFella = true;
+            Instantiate(_fella, new Vector3(0, 0.5f, -5), Quaternion.identity);
         }
     }
     IEnumerator timer()
