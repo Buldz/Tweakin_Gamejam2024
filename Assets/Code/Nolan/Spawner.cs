@@ -42,7 +42,7 @@ public class Spawner : MonoBehaviour
     }
     IEnumerator timer()
     {
-        yield return new WaitForSeconds(Random.Range(3, 10));
+        yield return new WaitForSeconds(Random.Range(5, 16));
         _vent.GetComponent<Renderer>().material.color = Color.black;
         _audioSource.PlayOneShot(_audioClips[0]);
         yield return new WaitForSeconds(Random.Range(1, 3));
