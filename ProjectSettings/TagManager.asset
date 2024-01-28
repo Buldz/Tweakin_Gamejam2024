@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - item
+  - ItemLocation
+  - Music
+  - PlayerSounds
   layers:
   - Default
   - TransparentFX
