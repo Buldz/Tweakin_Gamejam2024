@@ -5,6 +5,7 @@ using UnityEngine;
 public class Balloon : MonoBehaviour
 {
     public AudioSource balloonPopAudio;
+    public ParticleSystem confetti;
 
     // Update is called once per frame
     void Update()
@@ -15,6 +16,7 @@ public class Balloon : MonoBehaviour
     public void Pop()
     {
         balloonPopAudio.Play();
+        confetti.Play();
         Destroy(this.gameObject);
     }
 }

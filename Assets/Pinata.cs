@@ -5,6 +5,7 @@ using UnityEngine;
 public class Pinata : MonoBehaviour
 {
     public AudioSource pinataPopAudio;
+    public ParticleSystem confetti;
 
     // Update is called once per frame
     void Update()
@@ -15,6 +16,7 @@ public class Pinata : MonoBehaviour
     public void Pop()
     {
         pinataPopAudio.Play();
+        confetti.Play();
         Destroy(this.gameObject);
     }
 }
