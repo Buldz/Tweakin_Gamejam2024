@@ -31,7 +31,7 @@ public class PlayerInteract : MonoBehaviour
     {
         //Timer
         //holdTimer -= Time.deltaTime;
-
+        
         //Raycast
         Ray ray = new Ray(transform.position, transform.TransformDirection(Vector3.forward * range));
         RaycastHit hit;

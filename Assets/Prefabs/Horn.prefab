@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 270505252038226429}
   - component: {fileID: 7911620193491198289}
   - component: {fileID: 4301929482870972812}
-  - component: {fileID: 6420776489972387689}
+  - component: {fileID: 1414147109534642182}
   m_Layer: 0
   m_Name: Horn
   m_TagString: item
@@ -149,9 +149,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AudioSourceMusic: {fileID: 0}
   AudioSourcePlayer: {fileID: 0}
+  pickUp: 0
   hasBeenUsed: 0
-  hornSound: {fileID: 0}
---- !u!82 &6420776489972387689
+  hornSound: {fileID: 1414147109534642182}
+--- !u!82 &1414147109534642182
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,7 +162,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d47db170dd3846a48ad6dffc41d1ae4a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2dfd5ef18db59d145b68fcede173aa4f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

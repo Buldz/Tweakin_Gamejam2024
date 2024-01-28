@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8105356134621895744}
   - component: {fileID: 7375964231116397116}
   - component: {fileID: 7379513969253606942}
-  - component: {fileID: 7801538888445737478}
+  - component: {fileID: 962793210200587081}
   m_Layer: 0
   m_Name: ClownNose
   m_TagString: item
@@ -149,9 +149,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AudioSourceMusic: {fileID: 0}
   AudioSourcePlayer: {fileID: 0}
+  pickUp: 0
   hasBeenUsed: 0
-  clownNoseSound: {fileID: 0}
---- !u!82 &7801538888445737478
+  clownNoseSound: {fileID: 962793210200587081}
+--- !u!82 &962793210200587081
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,7 +162,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d47db170dd3846a48ad6dffc41d1ae4a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b0f813159cfe991418130f62ed40ce55, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
