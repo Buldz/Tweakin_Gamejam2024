@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 226285223710246216}
   - component: {fileID: 270505252038226429}
   - component: {fileID: 7911620193491198289}
-  - component: {fileID: 8479143550140136755}
+  - component: {fileID: 4301929482870972812}
   - component: {fileID: 6420776489972387689}
   m_Layer: 0
   m_Name: Horn
@@ -135,7 +135,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 114
   m_CollisionDetection: 0
---- !u!114 &8479143550140136755
+--- !u!114 &4301929482870972812
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,13 +144,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4874562307760654797}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 082fd05f47633ca458a764cbb5c4c75a, type: 3}
+  m_Script: {fileID: 11500000, guid: 167b7f435078e494ea2d9a1e9b05e397, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemLocation: {fileID: 0}
-  rb: {fileID: 7911620193491198289}
-  _playerCam: {fileID: 0}
-  hornSound: {fileID: 6420776489972387689}
+  AudioSourceMusic: {fileID: 0}
+  AudioSourcePlayer: {fileID: 0}
+  hasBeenUsed: 0
+  hornSound: {fileID: 0}
 --- !u!82 &6420776489972387689
 AudioSource:
   m_ObjectHideFlags: 0

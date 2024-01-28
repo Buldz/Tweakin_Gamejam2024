@@ -11,7 +11,9 @@ public abstract class Item : MonoBehaviour
     private Transform itemLocation;
     private Rigidbody rb;
     private GameObject _playerObj;
-    private bool pickUp = false;
+    public GameObject AudioSourceMusic;
+    public GameObject AudioSourcePlayer;
+    public bool pickUp = false;
     public bool hasBeenUsed = false;
     public static bool isUsed;
 
@@ -20,27 +22,41 @@ public abstract class Item : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         _playerObj = GameObject.FindGameObjectWithTag("ItemLocation");
+        AudioSourceMusic = GameObject.FindGameObjectWithTag("Music");
+        AudioSourcePlayer = GameObject.FindGameObjectWithTag("PlayerSounds");
         itemLocation = _playerObj.GetComponent<Transform>();
     }
 
     public void Pickup()
     {
+        if (!(this.gameObject.layer == 6))
+        {
+            this.transform.localScale = this.transform.localScale / 10;
+        }
+        else
+        {
+            this.transform.localScale = this.transform.localScale / 3;
+        }
         this.transform.position = itemLocation.transform.position;
         this.transform.rotation = itemLocation.transform.rotation;
-        this.transform.localScale = this.transform.localScale / 10;
         this.gameObject.transform.parent = itemLocation.transform;
         rb.isKinematic = true;
-
         pickUp = true;
     }
 
     public void Release()
     {
+        if (!(this.gameObject.layer == 6))
+        {
+            this.transform.localScale = this.transform.localScale * 10;
+        }
+        else
+        {
+            this.transform.localScale = this.transform.localScale * 3;
+        }
         this.gameObject.transform.parent = null;
         this.transform.rotation = Quaternion.identity;
-        this.transform.localScale = this.transform.localScale * 10;
         rb.isKinematic = false;
-
         pickUp = false;
     }
 
