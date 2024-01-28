@@ -1696,10 +1696,6 @@ PrefabInstance:
       value: 51753
       objectReference: {fileID: 0}
     - target: {fileID: 8482953299311265654, guid: 373defaa67421214a8dadc88a0a60caa, type: 3}
-      propertyPath: InitialModule.startColor.maxGradient.ctime4
-      value: 65535
-      objectReference: {fileID: 0}
-    - target: {fileID: 8482953299311265654, guid: 373defaa67421214a8dadc88a0a60caa, type: 3}
       propertyPath: InitialModule.startColor.maxGradient.key0.b
       value: 0.5518868
       objectReference: {fileID: 0}
