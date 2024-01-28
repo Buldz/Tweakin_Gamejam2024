@@ -17,6 +17,7 @@ public class Gun : Item
     public override void Use()
     {
         Used();
+        Cursor.lockState = CursorLockMode.None;
         _audioSource = this.GetComponent<AudioSource>();
         Camera.main.cullingMask = 0;
         AudioSourcePlayer.GetComponent<AudioSource>().mute = true;
@@ -32,6 +33,10 @@ public class Gun : Item
         if (hasBeenUsed)
         {
             AudioSourceMusic.GetComponent<AudioSource>().volume -= 0.3f * Time.deltaTime;
+        }
+        if (pickUp == true)
+        {
+            this.transform.localEulerAngles = new Vector3(-90, -80, 0);
         }
     }
 

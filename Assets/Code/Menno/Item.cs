@@ -13,7 +13,7 @@ public abstract class Item : MonoBehaviour
     private GameObject _playerObj;
     public GameObject AudioSourceMusic;
     public GameObject AudioSourcePlayer;
-    private bool pickUp = false;
+    public bool pickUp = false;
     public bool hasBeenUsed = false;
     public static bool isUsed;
 
@@ -80,14 +80,7 @@ public abstract class Item : MonoBehaviour
         }
         else
         {
-            if (!(this.gameObject.layer == 6))
-            {
-                this.transform.localEulerAngles = new Vector3(0, 90, 0);
-            }
-            else
-            {
-                this.transform.localEulerAngles = new Vector3(0, 0, 0);
-            }
+            this.transform.localEulerAngles = new Vector3(0, 90, 0);
         }
     }
 }
