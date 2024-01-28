@@ -1,39 +1,9 @@
 fileFormatVersion: 2
-guid: 728d058c4269c864fa4d7df2e954f97d
+guid: f6e5ad9b882253442a9f9229e07ffd46
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: hair
-    second: {fileID: 2100000, guid: 41f95b7d21b33d24ca3b33ab36cbb0bd, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: jermaface
-    second: {fileID: 2100000, guid: d680f30e5efe0024899545e465089d42, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: jermaskin
-    second: {fileID: 2100000, guid: 22262639920f43d6be32430e4e58350d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: pants
-    second: {fileID: 2100000, guid: be99bcea2fc910c42ad856b5cad4ada5, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: shirt
-    second: {fileID: 2100000, guid: b1423da46f94e684295a3328f91acb64, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: shoes
-    second: {fileID: 2100000, guid: 2d9b49fb476bc82459adc26848542639, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

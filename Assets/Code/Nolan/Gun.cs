@@ -17,6 +17,7 @@ public class Gun : Item
     public override void Use()
     {
         Used();
+        if(!hasBeenUsed){
         Cursor.lockState = CursorLockMode.None;
         _audioSource = this.GetComponent<AudioSource>();
         Camera.main.cullingMask = 0;
@@ -26,6 +27,8 @@ public class Gun : Item
         _canvas = GetComponentInChildren<Canvas>();
         _rawImage = GetComponentInChildren<RawImage>();
         StartCoroutine(timer());
+        hasBeenUsed = true;
+        }
     }
 
     void Update()
