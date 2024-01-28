@@ -24,6 +24,7 @@ public class Spawner : MonoBehaviour
     {
         if (Item.isUsed)
         {
+            SpawnItem();
             Item.isUsed = false;
         }
     }
@@ -38,10 +39,5 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         SpawnManager();
-    }
-
-    void Start()
-    {
-        SpawnItem();
     }
 }

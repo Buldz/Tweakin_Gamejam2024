@@ -2,18 +2,26 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public abstract class Item : MonoBehaviour
 {
     //Item
-    public Transform itemLocation;
-    public Rigidbody rb;
-    [SerializeField] private Camera _playerCam;
-    bool pickUp = false;
+    private Transform itemLocation;
+    private Rigidbody rb;
+    private GameObject _playerObj;
+    private bool pickUp = false;
     public bool hasBeenUsed = false;
     public static bool isUsed;
 
+
+    public void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        _playerObj = GameObject.FindGameObjectWithTag("ItemLocation");
+        itemLocation = _playerObj.GetComponent<Transform>();
+    }
 
     public void Pickup()
     {
@@ -38,8 +46,10 @@ public abstract class Item : MonoBehaviour
 
     public abstract void Use();
 
-    public void Used(){
-        if(!hasBeenUsed){
+    public void Used()
+    {
+        if (!hasBeenUsed)
+        {
             isUsed = true;
         }
         hasBeenUsed = true;
@@ -50,11 +60,11 @@ public abstract class Item : MonoBehaviour
     {
         if (pickUp == false)
         {
-            transform.LookAt(_playerCam.transform);
+            transform.LookAt(Camera.main.transform);
         }
         else
         {
-            this.transform.localEulerAngles = new Vector3(0,90,0);
+            this.transform.localEulerAngles = new Vector3(0, 90, 0);
         }
     }
 }

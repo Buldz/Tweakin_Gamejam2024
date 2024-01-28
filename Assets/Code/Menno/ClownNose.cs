@@ -8,6 +8,7 @@ public class ClownNose : Item
 
     public override void Use()
     {
+        Used();
         clownNoseSound.Play();
     }
 }
