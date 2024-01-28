@@ -15,8 +15,11 @@ public class Spawner : MonoBehaviour
 
     void SpawnItem()
     {
-        _currentGameObject = _gameObjectList[I];
-        StartCoroutine(timer());
+        if (I < _gameObjectList.Length)
+        {
+            _currentGameObject = _gameObjectList[I];
+            StartCoroutine(timer());
+        }
         I++;
     }
 
@@ -39,5 +42,10 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         SpawnManager();
+    }
+
+    void Start()
+    {
+        SpawnItem();
     }
 }
