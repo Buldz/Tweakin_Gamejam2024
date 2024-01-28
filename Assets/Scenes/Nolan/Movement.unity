@@ -2087,13 +2087,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameObjectList:
-  - {fileID: 349563229358125714, guid: ccb3509324369ee4880bb47656a97ed0, type: 3}
-  - {fileID: 4874562307760654797, guid: 6feb24807803e8b4c98fbd6a73d8aad3, type: 3}
   - {fileID: 4794176329864456661, guid: 9b302de816acaf147a486916d12ff5c9, type: 3}
   _audioSource: {fileID: 1065778309}
   _audioClips:
   - {fileID: 8300000, guid: 79078d26f391f0e4a93d2f0a543b9c4b, type: 3}
   - {fileID: 8300000, guid: 53a1070650a7c3b4196f5c53c5a889bb, type: 3}
+  _fella: {fileID: 3760229581648066592, guid: 17ab366dd79316145b5145332ff7d609, type: 3}
 --- !u!82 &1065778309
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3776,7 +3775,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: PlayerSounds
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2077446582821826373, guid: 4ad8b361419c25c4ca4f8f5d30859571, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
