@@ -6,6 +6,10 @@ TagManager:
   tags:
   - item
   - interactable
+  - Music
+  - ItemLocation
+  - PlayerSounds
+  - guy
   layers:
   - Default
   - TransparentFX
