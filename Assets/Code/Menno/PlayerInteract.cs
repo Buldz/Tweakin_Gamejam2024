@@ -20,6 +20,9 @@ public class PlayerInteract : MonoBehaviour
     //Object
     public Item lastLookedAtItem;
     public bool itemPickedUp = false;
+    //ui
+    public GameObject PickupInstructionUI;
+    public GameObject DropInstructionUI;
 
 
     void Start()
@@ -29,9 +32,10 @@ public class PlayerInteract : MonoBehaviour
 
     void Update()
     {
+        PickupInstructionUI.SetActive(false);
         //Timer
         //holdTimer -= Time.deltaTime;
-        
+
         //Raycast
         Ray ray = new Ray(transform.position, transform.TransformDirection(Vector3.forward * range));
         RaycastHit hit;
@@ -39,7 +43,7 @@ public class PlayerInteract : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, range))
         {
-           
+            PickupInstructionUI.SetActive(false);
             Item item = hit.collider.GetComponent<Item>();
 
             if (item != null && itemPickedUp == false)
@@ -50,10 +54,14 @@ public class PlayerInteract : MonoBehaviour
             //Item
             if (hit.collider.tag == "item" && itemPickedUp == false)
             {
-                //Press E to pickup item
+
                 if (Input.GetKeyDown("e"))
                 {
                     ItemPickup();
+                }
+                else
+                {
+                    PickupInstructionUI.SetActive(true);
                 }
             }
         }
@@ -75,11 +83,10 @@ public class PlayerInteract : MonoBehaviour
 
     void ItemPickup()
     {
-        if (itemPickedUp == false) 
+        if (itemPickedUp == false)
         {
             lastLookedAtItem.Pickup();
             itemPickedUp = true;
-            //PickupInstructionUI.SetActive(false);
         }
     }
 
@@ -89,6 +96,7 @@ public class PlayerInteract : MonoBehaviour
         {
             lastLookedAtItem.Release();
             itemPickedUp = false;
+            PickupInstructionUI.SetActive(false);
         }
     }
 
