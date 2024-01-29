@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 6924558407429558547}
   - component: {fileID: -4156547275177968818}
   - component: {fileID: 7374032079165578424}
-  - component: {fileID: 2983180976067938714}
+  - component: {fileID: 712893284130840300}
   m_Layer: 6
   m_Name: Gun
   m_TagString: item
@@ -270,14 +270,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4794176329864456661}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: -0, z: 0.7071068, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: 1, z: 1}
   m_LocalScale: {x: 7, y: 7, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2046245222865364469}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 180, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7385155220956651886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,12 +290,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7701bfec9ecaea94fb3b55c2360c688a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioSourceMusic: {fileID: 0}
-  AudioSourcePlayer: {fileID: 0}
   pickUp: 0
   hasBeenUsed: 0
   _audioClips:
-  - {fileID: 8300000, guid: c1ced01198130a94c9e2e6f1d1be609c, type: 3}
+  - {fileID: 8300000, guid: 0b8306d3f7adaad469a96815eab20006, type: 3}
   - {fileID: 8300000, guid: b838477e9fd4b5742b984232ccca1d29, type: 3}
   _canvas: {fileID: 0}
   _rawImage: {fileID: 0}
@@ -336,7 +334,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c1ced01198130a94c9e2e6f1d1be609c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0b8306d3f7adaad469a96815eab20006, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 0.9
@@ -472,8 +470,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2983180976067938714
-MeshCollider:
+--- !u!65 &712893284130840300
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -490,10 +488,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4493585093827132993, guid: d955f4adfe76ea54b924322f525600aa, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.09, y: 0.08, z: 0.15}
+  m_Center: {x: 0, y: -0.02, z: -0.02}
 --- !u!1 &5084970606853562659
 GameObject:
   m_ObjectHideFlags: 0

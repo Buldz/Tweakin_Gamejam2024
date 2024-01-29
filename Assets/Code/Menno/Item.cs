@@ -11,8 +11,6 @@ public abstract class Item : MonoBehaviour
     private Transform itemLocation;
     private Rigidbody rb;
     private GameObject _playerObj;
-    public GameObject AudioSourceMusic;
-    public GameObject AudioSourcePlayer;
     public bool pickUp = false;
     public bool hasBeenUsed = false;
     public static bool isUsed;
@@ -20,10 +18,9 @@ public abstract class Item : MonoBehaviour
 
     public void Start()
     {
+        gameObject.layer = 6;
         rb = GetComponent<Rigidbody>();
         _playerObj = GameObject.FindGameObjectWithTag("ItemLocation");
-        AudioSourceMusic = GameObject.FindGameObjectWithTag("Music");
-        AudioSourcePlayer = GameObject.FindGameObjectWithTag("PlayerSounds");
         itemLocation = _playerObj.GetComponent<Transform>();
     }
 
